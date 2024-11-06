@@ -13,10 +13,12 @@ const port = process.env.PORT || 8080;
 app.use(express.json())
 app.use(cors({
   origin:[process.env.FRONTEND_URL],
-  methods:["POST","GET"],
+  methods:["GET",
+    "POST"],
   credentials:true,
   allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
 }));
+app.options('*',cors());
 // Getting preflight cors error need to fix it 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
