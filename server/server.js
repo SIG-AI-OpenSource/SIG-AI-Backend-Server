@@ -32,11 +32,11 @@ async function main() {
   await mongoose.connect(db_url);
 }
 
-app.use(express.static('dist'));
+// app.use(express.static('dist'));
 
-// app.get("/",(req,res)=>{
-//   // serve my react app
-// });
+app.get("/",(req,res)=>{
+  res.json('Hello World testing');
+});
 
 // Testing route
 // app.get("/test",(req,res)=>{
