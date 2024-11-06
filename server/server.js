@@ -17,7 +17,7 @@ app.use(cors({
     "POST"],
   credentials:true,
   allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-  preflightContinue: false,
+  preflightContinue: true,
 }));
 app.options('*',cors());
 // Getting preflight cors error need to fix it 
